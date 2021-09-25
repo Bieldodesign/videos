@@ -18,13 +18,14 @@ function preload(){//carrega as texturas  e a musica
 }
 
 function setup() {
+    
   reverb = new p5.Reverb();
   reverb.process(msc, 3, 2);
   reverb.drywet(0.5);
   
   createCanvas(710, 400, WEBGL);
   canais = 64;
-  msc.play();//inicia a musica
+  //msc.play();//inicia a musica
   fft = new p5.FFT(0.99,canais);
   fft.setInput(msc);
   
@@ -72,9 +73,9 @@ function draw() {
   
   //orbitControl();//camera livre
   
-  camera (0, 0, 2000 - ((height/2) / tan(PI/6)*frameCount*0.025), camX,camY,0,0,1,0);//camera no trilho
+  //camera (0, 0, 2000 - ((height/2) / tan(PI/6)*frameCount*0.025), camX,camY,0,0,1,0);//camera no trilho
   
-   //camera (0,-200, height/2 + sin(frameCount*0.005)*(height/3), camX,camY,0,0,1,0);//camera trilho vem e vai
+   camera (0,-200, 1500 -(height/2 + sin(frameCount*0.05)*(height/3)), camX,camY,0,0,1,0);//camera trilho vem e vai
   
   if (frameCount < 500){
     push()
@@ -127,6 +128,21 @@ translate(random(-2000,2000),random(-1000,1000),random(-1000,1000));
   fill(255);
   noStroke();
 }
-  
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
+      let fs = fullscreen();
+        fullscreen(!fs);
+}
+}
 
+ function mousePressed() {
+  if (msc.isPlaying()) {
+    // .isPlaying() returns a boolean
+    msc.stop();
+    background(255, 0, 0);
+  } else {
+    msc.play();
+    background(0, 255, 0);
+  }
+  }
   

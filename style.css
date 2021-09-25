@@ -1,7 +1,12 @@
 html, body {
-  margin: 0;
-  padding: 0;
-}
+    background: black;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+}   
 canvas {
-  display: block;
+    display: table-cell;
+    padding: inherit;
+    border-width: thin;
+    border-color: aliceblue;
 }
