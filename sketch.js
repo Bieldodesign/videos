@@ -75,7 +75,7 @@ function draw() {
   
   //camera (0, 0, 2000 - ((height/2) / tan(PI/6)*frameCount*0.025), camX,camY,0,0,1,0);//camera no trilho
   
-   camera (0,-200, 1100 -(height/2 + sin(frameCount*0.05)*(height/3)), camX,camY,0,0,1,0);//camera trilho vem e vai
+   camera (0,-200, 800 -(height/2 + sin(frameCount*0.05)*(height/3)), camX,camY,0,0,1,0);//camera trilho vem e vai
   
   if (frameCount < 500){
     push()
