@@ -138,7 +138,7 @@ function keyPressed() {
  function mousePressed() {
   if (msc.isPlaying()) {
     // .isPlaying() returns a boolean
-    msc.stop();
+    msc.pause();
     background(255, 0, 0);
   } else {
     msc.play();
